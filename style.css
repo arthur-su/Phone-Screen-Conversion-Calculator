@@ -60,6 +60,10 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .display-label {
   color: rgb(100 116 139);
 }
