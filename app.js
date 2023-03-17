@@ -19,8 +19,8 @@ const stage3 = new currentTotalEasyApplies(90);
 
 function incrementTotalPhoneScreens() {
   totalPhoneScreens += 1;
-  const container = document.querySelector('.container-phonescreens');
-  container.innerHTML = `<b class="display-phonescreens">Phone Screens:</b> ${totalPhoneScreens}`;
+  const value = document.querySelector('.display-phonescreen-value');
+  value.textContent = `${totalPhoneScreens}`;
   calculatePhoneScreenConversionRate();
 }
 
@@ -36,8 +36,8 @@ function stopIncrementTotalPhoneScreens() {
 
 function incrementTotalEasyApplyApplications() {
   totalEasyApplyApplications += 1;
-  const container = document.querySelector('.container-applications');
-  container.innerHTML = `<b class="display-applications">Application(s):</b> ${totalEasyApplyApplications}`;
+  const value = document.querySelector('.display-application-value');
+  value.textContent = `${totalEasyApplyApplications}`;
   remindToCheckIn();
   calculatePhoneScreenConversionRate();
   console.log('totalEasyApplyApplications', totalEasyApplyApplications);
@@ -61,23 +61,23 @@ function calculatePhoneScreenConversionRate() {
   console.log(phoneScreenConversionRate);
   if (
     phoneScreenConversionRate < targetConversionRate &&
-    phoneScreenConversionRate < 5
+    phoneScreenConversionRate < 5.0
   ) {
-    const container = document.querySelector('.container-conversionrate');
-    container.innerHTML = `<b>Converted:</b> ${phoneScreenConversionRate}%`;
-    container.style.color = 'rgb(220 38 38)';
+    const value = document.querySelector('.display-conversion-value');
+    value.textContent = ` ${phoneScreenConversionRate}%`;
+    value.style.color = 'rgb(220 38 38)';
   } else if (
-    phoneScreenConversionRate >= 5 &&
+    phoneScreenConversionRate >= 5.0 &&
     phoneScreenConversionRate < targetConversionRate
   ) {
-    const container = document.querySelector('.container-conversionrate');
-    container.innerHTML = `<b>Converted:</b> ${phoneScreenConversionRate}%`;
-    container.style.color = 'rgb(251 191 36)';
+    const value = document.querySelector('.display-conversion-value');
+    value.textContent = ` ${phoneScreenConversionRate}%`;
+    value.style.color = 'rgb(251 191 36)';
   } else {
-    const container = document.querySelector('.container-conversionrate');
-    container.innerHTML = `<b>Converted:</b> ${phoneScreenConversionRate}%`;
+    const value = document.querySelector('.display-conversion-value');
+    value.textContent = ` ${phoneScreenConversionRate}%`;
     console.log('phoneScreenConversionRate', phoneScreenConversionRate);
-    container.style.color = 'rgb(132 204 22)';
+    value.style.color = 'rgb(132 204 22)';
   }
 }
 
@@ -96,11 +96,23 @@ function remindToCheckIn() {
 }
 
 function displayReminderToMakeDecisionOnApproach() {
-  const container = document.querySelector('.container-reminders');
-  container.innerHTML = `<b>Reminder:</b> Time to re-evaluate strategy based on above Conversion Rate!`;
+  const value = document.querySelector('.display-reminder-value');
+  value.textContent = `Time to re-evaluate strategy based on above Conversion Rate!`;
 }
 
 function unmountReminder() {
-  const container = document.querySelector('.container-reminders');
-  container.innerHTML = `<b>Reminder: </b>Keep going, you got this!`;
+  const value = document.querySelector('.display-reminder-value');
+  value.textContent = `Keep going, you got this!`;
+}
+
+function reset() {
+  totalPhoneScreens = 0;
+  totalEasyApplyApplications = 0;
+  const phonescreenValue = document.querySelector('.display-phonescreen-value');
+  phonescreenValue.textContent = `${totalPhoneScreens}`;
+  const applicationValue = document.querySelector('.display-application-value');
+  applicationValue.textContent = `${totalEasyApplyApplications}`;
+  const conversionValue = document.querySelector('.display-conversion-value');
+  conversionValue.textContent = 'none';
+  conversionValue.style.color = 'black';
 }

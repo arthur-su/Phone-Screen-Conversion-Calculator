@@ -9,6 +9,26 @@
   </head>
   <body>
     <div class="container">
+      <div class="container-content">
+        <div class="container-metrics">
+          <div class="container-label-value">
+            <div class="display-label">Screens</div>
+            <div class="display-phonescreen-value">0</div>
+          </div>
+          <div class="container-label-value">
+            <div class="display-label">Applications</div>
+            <div class="display-application-value">0</div>
+          </div>
+          <div class="container-label-value">
+            <div class="display-label">Converted</div>
+            <div class="display-conversion-value">none</div>
+          </div>
+        </div>
+        <div class="container-label-value">
+          <div class="display-label">Reminder</div>
+          <div class="display-reminder-value">Keep going, you got this!</div>
+        </div>
+      </div>
       <div class="btns">
         <button
           onclick="incrementTotalEasyApplyApplications()"
@@ -26,18 +46,12 @@
         >
           Add a Phone Screen
         </button>
-      </div>
-      <div class="container-content">
-        <div class="container-phonescreens">
-          <b class="display-phonescreens">Phone Screens:</b> 0
-        </div>
-        <div class="container-applications">
-          <b class="display-applications">Application(s):</b> 0
-        </div>
-        <div class="container-conversionrate"><b>Converted:</b></div>
-        <div class="container-reminders">
-          <b class="display-reminders">Reminder:</b> Keep going, you got this!
-        </div>
+        <button
+          onclick="reset()"
+          class="btn"
+        >
+          Reset
+        </button>
       </div>
     </div>
   </body>
