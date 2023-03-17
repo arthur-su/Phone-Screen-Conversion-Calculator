@@ -54,18 +54,17 @@
   display: inline-block;
   color: white;
   box-shadow: 0;
-  transition: box-shadow 0.1s;
-  transition: transform 0.05s;
+  transition: box-shadow 0.1s, transform 0.1s, background-color 0.1s;
 }
 
 .btn:active {
-  transform: translateY(1.5px);
+  transform: translateY(1px);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   background-color: #4f51f0;
 }
 
